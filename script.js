@@ -21,3 +21,22 @@ const quotes = [
   "It always seems impossible until it's done."
 ];
 
+const usedIndex = new Set()
+const quotesElement = document.getElementById("Quote")
+
+function generateQuote(){
+  if (usedIndex.size >= quotes.length){
+    usedIndex.clear()
+  }
+  
+  while(true){
+   const randomIdx = Math.floor(Math.random() * quotes.length)
+
+   if (usedIndex.has[randomIdx]) continue
+
+   const quote = quotes[randomIdx]
+   quotesElement.innerHTML = quote;
+   usedIndex.add(randomIdx)
+   break
+  }
+}
